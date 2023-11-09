@@ -18,7 +18,8 @@ sudo apt-get install gramine
 # Check for SGX compatibility
 is-sgx-available
 
-[ $? -ne 0 ] && exit 1
+# Prepare a signing key for SGX
+[ $? -eq 0 ] && gramine-sgx-gen-private-key
 
-# Prepare a signing key
-gramine-sgx-gen-private-key
+# Install BWA dependencies
+sudo apt-get install libz-dev
