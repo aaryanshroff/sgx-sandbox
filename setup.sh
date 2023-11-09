@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install build tools
+sudo apt-get install gcc make
+
 # Install Gramine packages
 sudo curl -fsSLo /usr/share/keyrings/gramine-keyring.gpg https://packages.gramineproject.io/gramine-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/gramine-keyring.gpg] https://packages.gramineproject.io/ $(lsb_release -sc) main" \
@@ -19,6 +22,3 @@ is-sgx-available
 
 # Prepare a signing key
 gramine-sgx-gen-private-key
-
-# Install build tools
-sudo apt-get install gcc make
