@@ -5,6 +5,9 @@ The Makefile and the template manifest are adapted from https://github.com/grami
 
 # Quick Start
 ```sh
+git clone --depth 1 https://github.com/aaryanshroff/sgx-sandbox
+cd sgx-sandbox
+
 # install and setup Gramine and build tools (gcc, make)
 ./setup.sh
 
