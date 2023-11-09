@@ -25,7 +25,7 @@ GRAMINE_LOG_LEVEL = error
 endif
 
 .PHONY: all
-all: bwa
+all: bwa bwa.manifest
 ifeq ($(SGX),1)
 all: bwa.manifest.sgx bwa.sig
 endif
