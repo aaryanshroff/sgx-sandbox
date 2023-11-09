@@ -86,7 +86,7 @@ sgx_outputs: bwa.manifest $(SRCDIR)/src/bwa
 # BWA build process creates the final executable as src/bwa. For
 # simplicity, copy it into our root directory.
 
-bwa: $(SRCDIR)/src/bwa
+bwa: $(SRCDIR)/bwa
 	cp $< $@
 
 ############################## RUNNING BWA ##################################
