@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Install Gramine packages
 sudo curl -fsSLo /usr/share/keyrings/gramine-keyring.gpg https://packages.gramineproject.io/gramine-keyring.gpg
