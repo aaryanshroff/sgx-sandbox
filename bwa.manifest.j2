@@ -27,7 +27,7 @@ loader.argv = ["bwa"]
 # Specify paths to search for libraries. The usual LD_LIBRARY_PATH syntax
 # applies. Paths must be in-Gramine visible paths, not host paths (i.e.,
 # paths must be taken from fs.mounts[...].path, not fs.mounts[...].uri).
-loader.env.LD_LIBRARY_PATH = "/lib"
+loader.env.LD_LIBRARY_PATH = "/lib:/usr/{{ arch_libdir }}:{{ arch_libdir }}"
 
 ################################## SIGNALS ####################################
 
@@ -53,6 +53,9 @@ fs.mounts = [
   # Mount bwa executable (located in the current directory) under the
   # in-Gramine visible root directory.
   { path = "/bwa", uri = "file:bwa" },
+
+  { path = "{{ arch_libdir }}", uri = "file:{{ arch_libdir }}" },
+  { path = "/usr/{{ arch_libdir }}", uri = "file:/usr/{{ arch_libdir }}" },
 ]
 
 ############################### SGX: GENERAL ##################################

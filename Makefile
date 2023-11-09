@@ -15,6 +15,11 @@
 
 ################################# CONSTANTS ###################################
 
+# directory with arch-specific libraries, used by BWA
+# the below path works for Debian/Ubuntu; for CentOS/RHEL/Fedora, you should
+# overwrite this default like this: `ARCH_LIBDIR=/lib64 make`
+ARCH_LIBDIR ?= /lib/$(shell $(CC) -dumpmachine)
+
 SRCDIR = src
 BWA_VERSION = v0.7.17
 
@@ -52,6 +57,7 @@ $(SRCDIR)/src/bwa: $(SRCDIR)/Makefile
 bwa.manifest: bwa.manifest.j2
 	gramine-manifest \
 		-Dlog_level=$(GRAMINE_LOG_LEVEL) \
+		-Darch_libdir=$(ARCH_LIBDIR) \
 		$< > $@
 
 # Manifest for Gramine-SGX requires special "gramine-sgx-sign" procedure. This
