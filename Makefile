@@ -49,7 +49,7 @@ $(SRCDIR)/src/bwa: $(SRCDIR)/Makefile
 # bwa.manifest (to be run under non-SGX Gramine) by replacing variables
 # in the template file using the "gramine-manifest" script.
 
-bwa.manifest: bwa.manifest.template
+bwa.manifest: bwa.manifest.j2
 	gramine-manifest \
 		-Dlog_level=$(GRAMINE_LOG_LEVEL) \
 		$< > $@
