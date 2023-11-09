@@ -15,5 +15,5 @@ cd sgx-sandbox
 make SGX=1
 
 # run BWA in Gramine-SGX
-make start
+make SGX=1 start
 ```
