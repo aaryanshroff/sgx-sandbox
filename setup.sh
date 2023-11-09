@@ -19,3 +19,6 @@ is-sgx-available
 
 # Prepare a signing key
 gramine-sgx-gen-private-key
+
+# Install build tools
+sudo apt-get install gcc make
