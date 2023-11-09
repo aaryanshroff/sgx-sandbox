@@ -19,13 +19,3 @@ is-sgx-available
 
 # Prepare a signing key
 gramine-sgx-gen-private-key
-
-# Build and run HelloWorld sample app
-git clone --depth 1  https://github.com/gramineproject/gramine.git
-
-sudo apt-get install gcc make
-
-cd gramine/CI-Examples/helloworld
-
-make SGX=1
-gramine-sgx helloworld
