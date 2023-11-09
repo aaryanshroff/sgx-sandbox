@@ -43,6 +43,7 @@ endif
 
 $(SRCDIR)/Makefile:
 	git clone --depth 1 --branch $(BWA_VERSION) https://github.com/lh3/bwa.git $(SRCDIR)
+	sudo apt install zlib1g
 
 $(SRCDIR)/src/bwa: $(SRCDIR)/Makefile
 	make -C $(SRCDIR)
