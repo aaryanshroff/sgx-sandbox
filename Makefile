@@ -89,7 +89,7 @@ sgx_outputs: bwa.manifest $(SRCDIR)/src/bwa
 bwa: $(SRCDIR)/src/bwa
 	cp $< $@
 
-############################## RUNNING TESTS ##################################
+############################## RUNNING BWA ##################################
 
 ifeq ($(SGX),)
 GRAMINE = gramine-direct
@@ -98,8 +98,8 @@ GRAMINE = gramine-sgx
 endif
 
 # Note that command-line arguments are hardcoded in the manifest file.
-.PHONY: start-gramine-server
-start-gramine-server: all
+.PHONY: start
+start: all
 	$(GRAMINE) bwa
 
 ################################## CLEANUP ####################################
